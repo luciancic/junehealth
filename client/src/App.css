@@ -13,3 +13,10 @@
   color: #324a5e;
 }
 
+.therapist-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  object-fit: cover;
+  object-position: top;
+}
