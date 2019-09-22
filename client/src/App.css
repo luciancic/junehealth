@@ -1,7 +1,7 @@
 .app {
   background-color: #f3f5f9;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .app-title {
@@ -11,6 +11,24 @@
   font-size: 2rem;
   font-weight: 500;
   color: #324a5e;
+}
+
+.therapist-container {
+
+}
+
+.therapist-list {
+  display: flex;
+  min-width: 100vw;
+  overflow: hidden;
+}
+
+.therapist {
+  width: 25vw;
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
 }
 
 .therapist-avatar {

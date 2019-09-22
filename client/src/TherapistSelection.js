@@ -35,15 +35,17 @@ const THERAPIST_LIST = [
 
 function TherapistSelection() {
   return (
-    <div>
-      <p>Select your Therapist:</p>
-      { THERAPIST_LIST.map(therapist => (
-        <div>
-          <img className='therapist-avatar' src={therapist.avatar} alt='therapist portrait' />
-          <h2>{therapist.name}</h2>
-          <p>{therapist.specialization}</p>
-        </div>
-      ))}
+    <div className='therapist-container'>
+      <p>Select your Therapist</p>
+      <div className='therapist-list'>
+        { THERAPIST_LIST.map(therapist => (
+          <div class='therapist'>
+            <img className='therapist-avatar' src={therapist.avatar} alt='therapist portrait' />
+            <h2>{therapist.name}</h2>
+            <p>{therapist.specialization}</p>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
