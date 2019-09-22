@@ -1,4 +1,5 @@
 import React from 'react';
+import TherapistSelection from './TherapistSelection';
 import './App.css';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
       <header className="app-title">
         June Health
       </header>
+      <TherapistSelection />
     </div>
   );
 }
