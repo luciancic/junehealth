@@ -14,7 +14,29 @@
 }
 
 .therapist-container {
+  position: relative;
   overflow: hidden;
+}
+
+.therapist-container::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 12vw;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(to right, #f3f5f9, transparent);
+  z-index: 1;
+}
+
+.therapist-container::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 12vw;
+  right: 0;
+  top: 0;
+  background-image: linear-gradient(to left, #f3f5f9, transparent);
 }
 
 .therapist-list {
