@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import av1 from './avatars/trp1.jpg';
 import av2 from './avatars/trp2.jpg';
 import av3 from './avatars/trp3.jpg';
@@ -34,12 +34,15 @@ const THERAPIST_LIST = [
 ]
 
 function TherapistSelection() {
-  const therapistListPadding = THERAPIST_LIST.length <= 3 ? null : 'therapist-list-padded';
+  const [ index, setIndex ] = useState(0);
+  const containerGradientLeft = index === 0 ? null : 'therapist-container-gradient-left';
+  const containerGradientRight = THERAPIST_LIST.length - index <= 3 ? null : 'therapist-container-gradient-right';
+  const listPadding = THERAPIST_LIST.length <= 3 ? null : 'therapist-list-padded';
 
   return (
-    <div className='therapist-container'>
+    <div className={`therapist-container ${containerGradientLeft} ${containerGradientRight}`}>
       <p>Select your Therapist</p>
-      <div className={`therapist-list ${therapistListPadding}`}>
+      <div className={`therapist-list ${listPadding}`} style={{ transform: `translateX(-${index * 30}vw)`}}>
         { THERAPIST_LIST.map(therapist => (
           <div class='therapist'>
             <img className='therapist-avatar' src={therapist.avatar} alt='therapist portrait' />

@@ -18,7 +18,7 @@
   overflow: hidden;
 }
 
-.therapist-container::before {
+.therapist-container-gradient-left::before {
   content: '';
   position: absolute;
   height: 100%;
@@ -29,7 +29,7 @@
   z-index: 1;
 }
 
-.therapist-container::after {
+.therapist-container-gradient-right::after {
   content: '';
   position: absolute;
   height: 100%;
