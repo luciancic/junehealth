@@ -42,10 +42,12 @@
 .therapist-list {
   min-width: 100vw;
   white-space: nowrap;
+  padding-bottom: 58px;
 }
 
 .therapist-list-padded {
-  padding: 0 5vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 .therapist-button {
@@ -88,7 +90,7 @@
 
 .therapist-selected {
   border: solid 3px #2dc400;
-  box-shadow: 0px 8px 82px -30px #2dc400;
+  box-shadow: 0px 8px 78px -24px #2dc400;
 }
 
 .therapist-selected-square {
