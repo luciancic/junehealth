@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Therapist from './components/Therapist';
 import ButtonNext from './components/ButtonNext';
 import ButtonPrev from './components/ButtonPrev';
 
@@ -49,13 +50,7 @@ function TherapistSelection() {
       <p>Select your Therapist</p>
       { !isFirst && <ButtonPrev handleClick={() => setIndex(index - 1)} /> }
       <div className={`therapist-list ${listPadding}`} style={{ transform: `translateX(-${index * 30}vw)`}}>
-        { THERAPIST_LIST.map(therapist => (
-          <div class='therapist'>
-            <img className='therapist-avatar' src={therapist.avatar} alt='therapist portrait' />
-            <h2 className='therapist-name'>{therapist.name}</h2>
-            <p>{therapist.specialization}</p>
-          </div>
-        ))}
+        { THERAPIST_LIST.map( therapist => <Therapist data={therapist} /> ) }
       </div>
       { !isLast && <ButtonNext handleClick={() => setIndex(index + 1)} /> }
     </div>
