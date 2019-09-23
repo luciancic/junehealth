@@ -39,6 +39,7 @@ const THERAPIST_LIST = [
 
 function TherapistSelection() {
   const [ index, setIndex ] = useState(0);
+  const [ selected, setSelected ] = useState(null);
   const isFirst = index === 0;
   const isLast = THERAPIST_LIST.length - index <= 3;
   const containerGradientLeft = isFirst ? '' : 'therapist-container-gradient-left';
@@ -50,7 +51,11 @@ function TherapistSelection() {
       <p>Select your Therapist</p>
       { !isFirst && <ButtonPrev handleClick={() => setIndex(index - 1)} /> }
       <div className={`therapist-list ${listPadding}`} style={{ transform: `translateX(-${index * 30}vw)`}}>
-        { THERAPIST_LIST.map( therapist => <Therapist data={therapist} /> ) }
+        { THERAPIST_LIST.map( therapist => <Therapist 
+          data={therapist} 
+          selected={selected === therapist} 
+          handleClick={() => setSelected(therapist) }
+        /> ) }
       </div>
       { !isLast && <ButtonNext handleClick={() => setIndex(index + 1)} /> }
     </div>
