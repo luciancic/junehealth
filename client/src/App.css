@@ -20,6 +20,9 @@
 .therapist-list {
   min-width: 100vw;
   white-space: nowrap;
+}
+
+.therapist-list-padded {
   padding: 0 5vw;
 }
 

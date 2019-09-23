@@ -34,10 +34,12 @@ const THERAPIST_LIST = [
 ]
 
 function TherapistSelection() {
+  const therapistListPadding = THERAPIST_LIST.length <= 3 ? null : 'therapist-list-padded';
+
   return (
     <div className='therapist-container'>
       <p>Select your Therapist</p>
-      <div className='therapist-list'>
+      <div className={`therapist-list ${therapistListPadding}`}>
         { THERAPIST_LIST.map(therapist => (
           <div class='therapist'>
             <img className='therapist-avatar' src={therapist.avatar} alt='therapist portrait' />
