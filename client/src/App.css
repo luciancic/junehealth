@@ -14,21 +14,23 @@
 }
 
 .therapist-container {
-
-}
-
-.therapist-list {
-  display: flex;
-  min-width: 100vw;
   overflow: hidden;
 }
 
+.therapist-list {
+  min-width: 100vw;
+  white-space: nowrap;
+  padding: 0 5vw;
+}
+
 .therapist {
-  width: 25vw;
+  width: 28vw;
+  display: inline-block;
   border-radius: 10px;
   background-color: white;
-  padding: 10px;
-  margin: 10px;
+  margin: 1vw;
+  padding-top: 25px;
+  padding-bottom: 10px;
 }
 
 .therapist-avatar {
