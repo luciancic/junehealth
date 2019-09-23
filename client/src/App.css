@@ -48,6 +48,32 @@
   padding: 0 5vw;
 }
 
+.therapist-button {
+  background-color: #2dc400;
+  height: 4rem;
+  width: 4rem;
+  border: none;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-1rem);
+  z-index: 1;
+}
+
+.therapist-button:active, .therapist-button:focus {
+  outline: 0;
+  border: none;
+  outline-style: none;
+}
+
+.therapist-button-prev {
+  left: 3rem;
+}
+
+.therapist-button-next {
+  right: 3rem;
+}
+
 .therapist {
   width: 28vw;
   display: inline-block;
