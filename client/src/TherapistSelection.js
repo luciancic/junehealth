@@ -49,7 +49,7 @@ function TherapistSelection() {
         { THERAPIST_LIST.map(therapist => (
           <div class='therapist'>
             <img className='therapist-avatar' src={therapist.avatar} alt='therapist portrait' />
-            <h2>{therapist.name}</h2>
+            <h2 className='therapist-name'>{therapist.name}</h2>
             <p>{therapist.specialization}</p>
           </div>
         ))}
