@@ -1,3 +1,13 @@
+button {
+  border: none;
+  border-radius: 10px;
+  height: 50px;
+  width: 175px;
+  font-size: small;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
 .app {
   background-color: #f3f5f9;
   text-align: center;
@@ -10,6 +20,12 @@
   align-items: center;
   justify-content: center;
   flex-basis: 20%;
+}
+
+.splash {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
 .therapist-top-container {
@@ -144,10 +160,10 @@
 }
 
 .therapist-client-input-container {
-  width: 330px;
+  width: 450px;
   background-color: white;
   display: flex;
-  height: 42px;
+  height: 60px;
   margin: auto;
   border-radius: 10px;
   overflow: hidden;
@@ -160,14 +176,9 @@
 }
 
 .therapist-client-button {
-  border: none;
   margin: 5px;
-  border-radius: 5px;
-  font-size: small;
   color: white;
   background-color: #bfc4cd;
-  font-weight: bold;
-  letter-spacing: 1px;
 }
 
 .wait-checkmark {
@@ -199,13 +210,6 @@
 .wait-close {
   background-color: white;
   color: #2dc400;
-  border: none;
-  border-radius: 10px;
-  height: 50px;
-  width: 175px;
-  font-size: medium;
-  font-weight: bold;
-  letter-spacing: 3px;
 }
 
 .wait-close-text {

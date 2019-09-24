@@ -3,7 +3,7 @@ import Title from '../components/Title';
 
 function Splash() {
   return (
-    <div>
+    <div className='splash'>
       <Title />
     </div>
   )
