@@ -20,8 +20,8 @@ function App() {
   return (
     <div className="app">
       { page === 'splash' ? <Splash /> :
-        page === 'select' ? <TherapistSelection data={therapists}/> :
-        page === 'wait' ? <Wait /> : null }
+        page === 'select' ? <TherapistSelection data={therapists} handleClick={() => setPage('wait')} /> :
+        page === 'wait' ? <Wait close={() => setPage('select')} /> : null }
     </div>
   );
 }

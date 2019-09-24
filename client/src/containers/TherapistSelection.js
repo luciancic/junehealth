@@ -4,7 +4,7 @@ import ButtonNext from '../components/ButtonNext';
 import ButtonPrev from '../components/ButtonPrev';
 import Title from '../components/Title';
 
-function TherapistSelection({ data }) {
+function TherapistSelection({ data, handleClick }) {
   const [ index, setIndex ] = useState(0);
   const [ selected, setSelected ] = useState(null);
   const isFirst = index === 0;
@@ -32,7 +32,7 @@ function TherapistSelection({ data }) {
         <p className='therapist-client-text'>Please enter your first name</p>
         <div className='therapist-client-input-container'>  
           <input className='therapist-client-input' />
-          <button className='therapist-client-button'>CONFIRM</button>
+          <button className='therapist-client-button' onClick={handleClick}>CONFIRM</button>
         </div>  
       </div>
     </div>
