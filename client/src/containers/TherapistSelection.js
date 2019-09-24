@@ -28,6 +28,11 @@ function TherapistSelection({ data }) {
         </div>
         { !isLast && <ButtonNext handleClick={() => setIndex(index + 1)} /> }
       </div>
+      <p>Please enter your first name</p>
+      <div className='therapist-client-container'>  
+        <input className='therapist-client-input' />
+        <button className='therapist-client-button'>CONFIRM</button>
+      </div>
     </div>
   )
 }

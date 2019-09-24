@@ -114,6 +114,33 @@
   font-weight: normal;
 }
 
+.therapist-client-container {
+  width: 330px;
+  background-color: white;
+  display: flex;
+  height: 42px;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.therapist-client-input {
+  padding-left: 14px;
+  width: 100%;
+  border: none;
+}
+
+.therapist-client-button {
+  border: none;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: small;
+  color: white;
+  background-color: #bfc4cd;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
 .wait-checkmark {
   height: 100px;
   width: 100px;
