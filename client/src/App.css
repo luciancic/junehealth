@@ -181,9 +181,17 @@ button {
   background-color: #bfc4cd;
 }
 
+.wait-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .wait-checkmark {
-  height: 100px;
-  width: 100px;
+  height: 85px;
+  width: 85px;
   border: solid #2dc400;
   border-radius: 100%;
   display: inline-block;
@@ -193,7 +201,7 @@ button {
 .wait-checkmark::before {
   content: '';
   height: 19px;
-  width: 46px;
+  width: 40px;
   border-bottom: solid #2dc400;
   display: inline-block;
   position: absolute;
@@ -205,6 +213,10 @@ button {
 
 .wait-text {
   font-size: 22px;
+}
+
+.wait-close-container {
+  flex-basis: 25%
 }
 
 .wait-close {

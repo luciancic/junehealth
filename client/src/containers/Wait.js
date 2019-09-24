@@ -3,12 +3,14 @@ import Title from '../components/Title';
 
 function Wait() {
   return (
-    <div>
+    <div className='wait-container'>
       <Title />
       <div className='wait-checkmark' />
       <p className='wait-text'>Please wait, your therapist will be out shortly.</p>
-      <button className='wait-close'>CLOSE</button>
-      <span className='wait-close-text'>Automatically after 5 sec...</span>
+      <div className='wait-close-container'>
+        <button className='wait-close'>CLOSE</button>
+        <span className='wait-close-text'>Automatically after 5 sec...</span>
+      </div>
     </div>
   )
 }
