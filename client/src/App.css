@@ -113,3 +113,25 @@
 .therapist-name {
   font-weight: normal;
 }
+
+.wait-checkmark {
+  height: 100px;
+  width: 100px;
+  border: solid #2dc400;
+  border-radius: 100%;
+  display: inline-block;
+  position: relative;
+}
+
+.wait-checkmark::before {
+  content: '';
+  height: 19px;
+  width: 46px;
+  border-bottom: solid #2dc400;
+  display: inline-block;
+  position: absolute;
+  border-left: solid #2dc400;
+  transform: rotate(-45deg);
+  top: 32%;
+  left: 27%;
+}

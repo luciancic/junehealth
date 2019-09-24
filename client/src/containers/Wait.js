@@ -5,6 +5,7 @@ function Wait() {
   return (
     <div>
       <Title />
+      <div className='wait-checkmark' />
     </div>
   )
 }
