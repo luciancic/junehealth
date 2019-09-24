@@ -5,12 +5,7 @@
 }
 
 .app-title {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-weight: 500;
-  color: #324a5e;
+  transform: scale(0.9);
 }
 
 .therapist-container {

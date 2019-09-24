@@ -1,12 +1,13 @@
 import React from 'react';
 import TherapistSelection from './TherapistSelection';
 import './App.css';
+import titleImg from './assets/title.png';
 
 function App() {
   return (
     <div className="app">
       <header className="app-title">
-        June Health
+        <img src={ titleImg } alt="title"/>
       </header>
       <TherapistSelection />
     </div>
