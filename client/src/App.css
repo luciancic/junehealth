@@ -5,10 +5,22 @@
 }
 
 .app-title {
-  transform: scale(0.9);
+  transform: scale(0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 20%;
+}
+
+.therapist-top-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-around;
 }
 
 .therapist-container {
+  flex-basis: 50%;
   position: relative;
   overflow: hidden;
 }
@@ -124,6 +136,14 @@
 }
 
 .therapist-client-container {
+  flex-basis: 25%;
+}
+
+.therapist-client-text {
+  margin-top: 0;
+}
+
+.therapist-client-input-container {
   width: 330px;
   background-color: white;
   display: flex;

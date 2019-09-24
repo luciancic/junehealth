@@ -14,7 +14,7 @@ function TherapistSelection({ data }) {
   const listPadding = data.length <= 3 ? '' : 'therapist-list-padded';
 
   return (
-    <div>
+    <div className='therapist-top-container'>
       <Title />
       <div className={`therapist-container ${containerGradientLeft} ${containerGradientRight}`}>
         <p>Select your Therapist</p>
@@ -28,10 +28,12 @@ function TherapistSelection({ data }) {
         </div>
         { !isLast && <ButtonNext handleClick={() => setIndex(index + 1)} /> }
       </div>
-      <p>Please enter your first name</p>
-      <div className='therapist-client-container'>  
-        <input className='therapist-client-input' />
-        <button className='therapist-client-button'>CONFIRM</button>
+      <div className='therapist-client-container'>
+        <p className='therapist-client-text'>Please enter your first name</p>
+        <div className='therapist-client-input-container'>  
+          <input className='therapist-client-input' />
+          <button className='therapist-client-button'>CONFIRM</button>
+        </div>  
       </div>
     </div>
   )
