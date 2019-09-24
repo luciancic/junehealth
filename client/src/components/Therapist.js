@@ -9,7 +9,7 @@ function Therapist({ data, handleClick, selected }) {
       { selected && <SelectedMark /> }
       <img className='therapist-avatar' src={data.avatar} alt='therapist portrait' />
       <h2 className='therapist-name'>{data.name}</h2>
-      <p>{data.specialization}</p>
+      <p className='therapist-specialization'>{data.specialization}</p>
     </div>
   )
 }

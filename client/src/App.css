@@ -112,6 +112,15 @@
 
 .therapist-name {
   font-weight: normal;
+  margin-top: 15px;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.therapist-specialization {
+  margin-top: 0;
+  font-size: 14px;
+  font-weight: lighter;
 }
 
 .therapist-client-container {
