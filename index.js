@@ -1,8 +1,11 @@
-const express = require('express');
+const path = require('path')
+const express = require('express')
 
 const app = express();
 
-app.get('/', (req, res) => {
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+app.get('/api/ping', (req, res) => {
   res.send('Ping')
 })
 
