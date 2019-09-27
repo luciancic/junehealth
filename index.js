@@ -9,4 +9,5 @@ app.get('/api/ping', (req, res) => {
   res.send('Ping')
 })
 
-app.listen(3000, () => console.log('Started up server'))
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log('Started up server'))
