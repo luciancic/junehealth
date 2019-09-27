@@ -9,5 +9,9 @@ app.get('/api/ping', (req, res) => {
   res.send('Ping')
 })
 
+app.get('*', (req,res) =>{
+	res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log('Started up server'))
