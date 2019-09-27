@@ -5,8 +5,8 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.get('/api/ping', (req, res) => {
-  res.send('Ping')
+app.get('/api/therapists', (req, res) => {
+  res.send('Getting your therapists')
 })
 
 app.get('*', (req,res) =>{
