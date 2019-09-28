@@ -11,6 +11,7 @@ const Therapist = require('./db/Therapist');
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, 'db/avatars')));
 
 app.get('/api/therapists', async (req, res) => {
   const therapists = await Therapist.findAll({ attributes: ['name', 'specialization', 'avatarFile']});
