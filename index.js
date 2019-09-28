@@ -12,8 +12,9 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.get('/api/therapists', (req, res) => {
-  res.send('Getting your therapists')
+app.get('/api/therapists', async (req, res) => {
+  const therapists = await Therapist.findAll({ attributes: ['name', 'specialization', 'avatarFile']});
+  res.json(therapists)
 })
 
 app.get('*', (req,res) =>{
