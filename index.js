@@ -1,7 +1,12 @@
 const path = require('path')
 const express = require('express')
 
-require('./Therapist');
+// Set local config, do not commit this file to git
+try {
+  require('./config');
+} catch {}
+
+const Therapist = require('./db/Therapist');
 
 const app = express();
 

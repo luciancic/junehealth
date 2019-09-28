@@ -1,3 +1,7 @@
+try {
+  require('../config');
+} catch {}
+
 const Therapist = require('../db/Therapist')
 
 const THERAPIST_LIST = [
