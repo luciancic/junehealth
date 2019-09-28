@@ -1,5 +1,9 @@
 const Sequelize = require('sequelize');
 
+try {
+  require('../config');
+} catch {}
+
 const sequelize = new Sequelize(process.env.DATABASE_URL);
 
 
