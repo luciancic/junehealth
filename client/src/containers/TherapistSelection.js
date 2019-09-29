@@ -20,12 +20,12 @@ function TherapistSelection({ data, handleClick }) {
         <p>Select your Therapist</p>
         { !isFirst && <ButtonPrev handleClick={() => setIndex(index - 1)} /> }
         <div className={`therapist-list ${listPadding}`} style={{ transform: `translateX(-${index * 30}vw)`}}>
-          { data.map( therapist => (
+          { data.map( (therapist, i) => (
             <Therapist 
               key={therapist.name}
               data={therapist} 
-              selected={selected === therapist} 
-              handleClick={() => setSelected(therapist) }
+              selected={selected === i} 
+              handleClick={() => setSelected(selected === i ? null : i)}
             /> 
           ))}
         </div>
