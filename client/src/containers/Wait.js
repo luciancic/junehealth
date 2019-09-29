@@ -3,8 +3,9 @@ import Title from '../components/Title';
 
 function Wait({ close }) {
   useEffect(() => {
-    setTimeout(close, 5000)
-  }, [])
+    let timeout = setTimeout(close, 5000);
+    return () => clearTimeout(timeout);
+  }, [close])
 
   return (
     <div className='wait-container'>
