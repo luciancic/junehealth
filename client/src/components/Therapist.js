@@ -7,7 +7,7 @@ function Therapist({ data, handleClick, selected }) {
   return (
     <div class={`therapist ${selectedClass}`} onClick={handleClick}>
       { selected && <SelectedMark /> }
-      <img className='therapist-avatar' src={data.avatar} alt='therapist portrait' />
+      <img className='therapist-avatar' src={data.avatarFile} alt='therapist portrait' />
       <h2 className='therapist-name'>{data.name}</h2>
       <p className='therapist-specialization'>{data.specialization}</p>
     </div>
