@@ -13,19 +13,12 @@ function TherapistSelection({ data, handleClick }) {
   const containerGradientRight = isLast ? '' : 'therapist-container-gradient-right';
   const listPadding = data.length <= 3 ? '' : 'therapist-list-padded';
 
-  function shouldPrevBlink() {
-    return (selected !== null) && (selected < index)
-  }
-  function shouldNextBlink() {
-    return selected > (index + 2)
-  }
-
   return (
     <div className='therapist-top-container'>
       <Title />
       <div className={`therapist-container ${containerGradientLeft} ${containerGradientRight}`}>
         <p>Select your Therapist</p>
-        { !isFirst && <ButtonPrev isBlinking={shouldPrevBlink()} handleClick={() => setIndex(index - 1)} /> }
+        { !isFirst && <ButtonPrev handleClick={() => setIndex(index - 1)} /> }
         <div className={`therapist-list ${listPadding}`} style={{ transform: `translateX(-${index * 30}vw)`}}>
           { data.map( (therapist, i) => (
             <Therapist 
@@ -36,7 +29,7 @@ function TherapistSelection({ data, handleClick }) {
             /> 
           ))}
         </div>
-        { !isLast && <ButtonNext isBlinking={shouldNextBlink()} handleClick={() => setIndex(index + 1)} /> }
+        { !isLast && <ButtonNext handleClick={() => setIndex(index + 1)} /> }
       </div>
       <div className='therapist-client-container'>
         <p className='therapist-client-text'>Please enter your first name</p>
