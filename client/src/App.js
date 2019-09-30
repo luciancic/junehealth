@@ -4,7 +4,7 @@ import Splash from './containers/Splash';
 import TherapistSelection from './containers/TherapistSelection';
 import Wait from './containers/Wait';
 
-import './App.css';
+import './App.scss';
 
 function App() {
   // Values can be 'splash', 'select', 'wait'

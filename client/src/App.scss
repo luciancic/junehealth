@@ -1,0 +1,286 @@
+$green: #2dc400;
+$disabled-grey: #bfc4cd;
+$background-grey: #f3f5f9;
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes latefadein {
+  from { opacity: 0; }
+  60%  { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes popup {
+  from { transform: scale(0) }
+  90%  { transform: scale(1.1) }
+  to   { transform: scale(1) }
+}
+
+@keyframes scrollin {
+  from { transform: translateX(80vw) }
+  75%  { transform: translateX(-2vw) }
+  to   { transform: translateX(0) }
+}
+
+@mixin button {
+  border: none;
+  border-radius: 10px;
+  height: 50px;
+  width: 175px;
+  font-size: small;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.app {
+  background-color: $background-grey;
+  text-align: center;
+  min-height: 100vh;
+  
+  &-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 20%;
+    animation: fadein 300ms ease-out;
+    
+    img {
+      width: 275px;
+    }
+  }
+}
+
+.splash {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.therapist {
+
+  &__container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-around;
+  animation: fadein 300ms ease-out;
+  }
+  
+  &__list-container {
+    flex-basis: 50%;
+    position: relative;
+    overflow: hidden;
+    
+    @mixin gardient {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 12vw;
+      top: 0;
+    }
+    &-gradient--left::before {
+      @include gardient;
+      left: 0;
+      background-image: linear-gradient(to right, $background-grey, transparent);
+      z-index: 1
+    }
+      
+    &-gradient--right::after {
+      @include gardient;
+      right: 0;
+      background-image: linear-gradient(to left, $background-grey, transparent);
+    }
+  }
+
+  &__list {
+    min-width: 100vw;
+    white-space: nowrap;
+    padding-bottom: 58px;
+    transition: 300ms ease-in-out;
+    animation: scrollin 900ms ease-in-out;
+    &--padded {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+
+    &-button {
+      background-color: $green;
+      height: 4rem;
+      width: 4rem;
+      border: none;
+      border-radius: 100%;
+      position: absolute;
+      top: 45%;
+      z-index: 1;
+      animation: popup 600ms ease-in;
+      &:active, &:focus {
+        outline: 0;
+        border: none;
+        outline-style: none;
+      }
+    
+      &--prev {
+        left: 3rem;
+      }
+      
+      &--next {
+        right: 3rem;
+      }
+    }
+  }
+  
+  &__card {
+    width: 28vw;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: white;
+    margin: 1vw;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    position: relative;
+    &--selected {
+      border: solid 3px $green;
+      padding-top: 22px;
+      padding-bottom: 7px;
+      box-shadow: 0px 8px 78px -24px $green;
+    }
+
+    &-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+    
+    &-name {
+      font-weight: normal;
+      margin-top: 15px;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+    
+    &-specialization {
+      margin-top: 0;
+      font-size: 14px;
+      font-weight: lighter;
+    }
+  }
+
+  &__selected-checkmark {
+    transform: translateY(5px);
+    &-container {
+      height: 35px;
+      width: 35px;
+      background-color: $green;
+      top: 0;
+      right: 0;
+      position: absolute;
+      border-bottom-left-radius: 12px;
+    }
+  }
+
+  &__confirm {
+  
+    &-container {
+      flex-basis: 25%;
+    }
+  
+    &-text {
+      margin-top: 0;
+    }
+  
+    &-input {
+  
+      &-container {
+        width: 450px;
+        background-color: white;
+        display: flex;
+        height: 60px;
+        margin: auto;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+    
+      &-form {
+        padding-left: 14px;
+        width: 100%;
+        border: none;
+      }
+      &-button {
+        @include button;
+        margin: 5px;
+        color: white;
+        background-color: $disabled-grey;
+        transition: 300ms ease-in-out;
+        &--enabled {
+          background-color: $green;
+        }
+      }
+    }
+  }
+}
+
+
+.wait {
+
+  &__container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    animation: fadein 300ms ease-out;
+  }
+  
+  &__checkmark {
+    height: 85px;
+    width: 85px;
+    border: solid $green;
+    border-radius: 100%;
+    display: inline-block;
+    position: relative;
+    animation: popup 600ms ease;
+    &::before {
+      content: '';
+      height: 19px;
+      width: 40px;
+      border-bottom: solid $green;
+      display: inline-block;
+      position: absolute;
+      border-left: solid $green;
+      transform: rotate(-45deg);
+      top: 32%;
+      left: 27%;
+    }
+  }
+
+  &__text {
+    font-size: 22px;
+    animation: latefadein 1000ms ease-out;
+  }
+
+  &__close {
+
+    &-container {
+      flex-basis: 25%;
+      animation: latefadein 1300ms ease-out;
+    }
+
+    &-button {
+      @include button;
+      background-color: white;
+      color: $green;
+    }
+
+    &-text {
+      display: block;
+      color: gray;
+      margin-top: 8px;
+    }
+  }
+}

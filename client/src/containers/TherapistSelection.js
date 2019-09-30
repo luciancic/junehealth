@@ -10,18 +10,18 @@ function TherapistSelection({ data, handleClick }) {
   const [ clientName, setClientName ] = useState('');
   const isFirst = index === 0;
   const isLast = data.length - index <= 3;
-  const containerGradientLeft = isFirst ? '' : 'therapist-container-gradient-left';
-  const containerGradientRight = isLast ? '' : 'therapist-container-gradient-right';
-  const listPadding = data.length <= 3 ? '' : 'therapist-list-padded';
+  const containerGradientLeft = isFirst ? '' : 'therapist__list-container-gradient--left';
+  const containerGradientRight = isLast ? '' : 'therapist__list-container-gradient--right';
+  const listPadding = data.length <= 3 ? '' : 'therapist__list--padded';
   const isConfirmEnabled = (selected !== null) && (clientName !== '');
 
   return (
-    <div className='therapist-top-container'>
+    <div className='therapist__container'>
       <Title />
-      <div className={`therapist-container ${containerGradientLeft} ${containerGradientRight}`}>
+      <div className={`therapist__list-container ${containerGradientLeft} ${containerGradientRight}`}>
         <p>Select your Therapist</p>
         { !isFirst && <ButtonPrev handleClick={() => setIndex(index - 1)} /> }
-        <div className={`therapist-list ${listPadding}`} style={{ transform: `translateX(-${index * 30}vw)`}}>
+        <div className={`therapist__list ${listPadding}`} style={{ transform: `translateX(-${index * 30}vw)`}}>
           { data.map( (therapist, i) => (
             <Therapist 
               key={therapist.name}
@@ -33,11 +33,11 @@ function TherapistSelection({ data, handleClick }) {
         </div>
         { !isLast && <ButtonNext handleClick={() => setIndex(index + 1)} /> }
       </div>
-      <div className='therapist-client-container'>
-        <p className='therapist-client-text'>Please enter your first name</p>
-        <div className='therapist-client-input-container'>  
-          <input className='therapist-client-input' onChange={ev => setClientName(ev.target.value)}/>
-          <button className={`therapist-client-button ${isConfirmEnabled ? 'therapist-client-button-enabled' : ''}`} onClick={isConfirmEnabled && handleClick}>CONFIRM</button>
+      <div className='therapist__confirm-container'>
+        <p className='therapist__confirm-text'>Please enter your first name</p>
+        <div className='therapist__confirm-input-container'>  
+          <input className='therapist__confirm-input-form' onChange={ev => setClientName(ev.target.value)}/>
+          <button className={`therapist__confirm-input-button ${isConfirmEnabled ? 'therapist__confirm-input-button--enabled' : ''}`} onClick={isConfirmEnabled && handleClick}>CONFIRM</button>
         </div>  
       </div>
     </div>
