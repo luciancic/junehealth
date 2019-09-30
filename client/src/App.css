@@ -197,6 +197,11 @@ button {
   margin: 5px;
   color: white;
   background-color: #bfc4cd;
+  transition: 300ms ease-in-out;
+}
+
+.therapist-client-button-enabled {
+  background-color: #2dc400;
 }
 
 .wait-container {
