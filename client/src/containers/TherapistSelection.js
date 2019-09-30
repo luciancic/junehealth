@@ -32,7 +32,7 @@ function TherapistSelection({ data, handleClick }) {
               key={therapist.name}
               data={therapist} 
               selected={selected === i} 
-              handleClick={() => setSelected(i) }
+              handleClick={() => setSelected(selected === i ? null : i)}
             /> 
           ))}
         </div>
