@@ -3,6 +3,12 @@
   to   { opacity: 1; }
 }
 
+@keyframes latefadein {
+  from { opacity: 0; }
+  60%  { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 @keyframes popup {
   from { transform: scale(0) }
   90%  { transform: scale(1.1) }
@@ -106,7 +112,7 @@ button {
   position: absolute;
   top: 45%;
   z-index: 1;
-  animation: popup 400ms ease-in;
+  animation: popup 600ms ease-in;
 }
 
 .therapist-button:active, .therapist-button:focus {
@@ -228,6 +234,7 @@ button {
   border-radius: 100%;
   display: inline-block;
   position: relative;
+  animation: popup 600ms ease;
 }
 
 .wait-checkmark::before {
@@ -245,10 +252,12 @@ button {
 
 .wait-text {
   font-size: 22px;
+  animation: latefadein 1000ms ease-out;
 }
 
 .wait-close-container {
-  flex-basis: 25%
+  flex-basis: 25%;
+  animation: latefadein 1300ms ease-out;
 }
 
 .wait-close {
