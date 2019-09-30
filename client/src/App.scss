@@ -39,18 +39,18 @@ button {
   background-color: $background-grey;
   text-align: center;
   min-height: 100vh;
-}
-
-.app-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-basis: 20%;
-  animation: fadein 300ms ease-out;
-}
-
-.app-title img {
-  width: 275px;
+  
+  &-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 20%;
+    animation: fadein 300ms ease-out;
+    
+    img {
+      width: 275px;
+    }
+  }
 }
 
 .splash {
