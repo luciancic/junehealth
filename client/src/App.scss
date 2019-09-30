@@ -1,3 +1,7 @@
+$green: #2dc400;
+$disabled-grey: #bfc4cd;
+$background-grey: #f3f5f9;
+
 @keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -32,7 +36,7 @@ button {
 }
 
 .app {
-  background-color: #f3f5f9;
+  background-color: $background-grey;
   text-align: center;
   min-height: 100vh;
 }
@@ -76,7 +80,7 @@ button {
   width: 12vw;
   left: 0;
   top: 0;
-  background-image: linear-gradient(to right, #f3f5f9, transparent);
+  background-image: linear-gradient(to right, $background-grey, transparent);
   z-index: 1;
 }
 
@@ -87,7 +91,7 @@ button {
   width: 12vw;
   right: 0;
   top: 0;
-  background-image: linear-gradient(to left, #f3f5f9, transparent);
+  background-image: linear-gradient(to left, $background-grey, transparent);
 }
 
 .therapist-list {
@@ -104,7 +108,7 @@ button {
 }
 
 .therapist-button {
-  background-color: #2dc400;
+  background-color: $green;
   height: 4rem;
   width: 4rem;
   border: none;
@@ -142,16 +146,16 @@ button {
 }
 
 .therapist-selected {
-  border: solid 3px #2dc400;
+  border: solid 3px $green;
   padding-top: 22px;
   padding-bottom: 7px;
-  box-shadow: 0px 8px 78px -24px #2dc400;
+  box-shadow: 0px 8px 78px -24px $green;
 }
 
 .therapist-selected-square {
   height: 35px;
   width: 35px;
-  background-color: #2dc400;
+  background-color: $green;
   top: 0;
   right: 0;
   position: absolute;
@@ -210,12 +214,12 @@ button {
 .therapist-client-button {
   margin: 5px;
   color: white;
-  background-color: #bfc4cd;
+  background-color: $disabled-grey;
   transition: 300ms ease-in-out;
 }
 
 .therapist-client-button-enabled {
-  background-color: #2dc400;
+  background-color: $green;
 }
 
 .wait-container {
@@ -230,7 +234,7 @@ button {
 .wait-checkmark {
   height: 85px;
   width: 85px;
-  border: solid #2dc400;
+  border: solid $green;
   border-radius: 100%;
   display: inline-block;
   position: relative;
@@ -241,10 +245,10 @@ button {
   content: '';
   height: 19px;
   width: 40px;
-  border-bottom: solid #2dc400;
+  border-bottom: solid $green;
   display: inline-block;
   position: absolute;
-  border-left: solid #2dc400;
+  border-left: solid $green;
   transform: rotate(-45deg);
   top: 32%;
   left: 27%;
@@ -262,11 +266,11 @@ button {
 
 .wait-close {
   background-color: white;
-  color: #2dc400;
+  color: $green;
 }
 
 .wait-close-text {
   display: block;
-  color: #8d9197;
+  color: gray;
   margin-top: 8px;
 }
