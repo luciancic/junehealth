@@ -106,7 +106,7 @@ button {
   position: absolute;
   top: 45%;
   z-index: 1;
-  animation: popup 400ms ease-in;
+  animation: popup 600ms ease-in;
 }
 
 .therapist-button:active, .therapist-button:focus {
@@ -228,6 +228,7 @@ button {
   border-radius: 100%;
   display: inline-block;
   position: relative;
+  animation: popup 600ms ease-in-out;
 }
 
 .wait-checkmark::before {
