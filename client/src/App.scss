@@ -59,168 +59,171 @@ button {
   justify-content: center;
 }
 
-.therapist-top-container {
+.therapist {
+
+  &__container {
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: space-around;
   animation: fadein 300ms ease-out;
+  }
+  
+  &__list-container {
+    flex-basis: 50%;
+    position: relative;
+    overflow: hidden;
+    
+    @mixin gardient {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 12vw;
+      top: 0;
+    }
+    &-gradient--left::before {
+      @include gardient;
+      left: 0;
+      background-image: linear-gradient(to right, $background-grey, transparent);
+      z-index: 1
+    }
+      
+    &-gradient--right::after {
+      @include gardient;
+      right: 0;
+      background-image: linear-gradient(to left, $background-grey, transparent);
+    }
+  }
+
+  &__list {
+    min-width: 100vw;
+    white-space: nowrap;
+    padding-bottom: 58px;
+    transition: 300ms ease-in-out;
+    animation: scrollin 900ms ease-in-out;
+    &--padded {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+
+    &-button {
+      background-color: $green;
+      height: 4rem;
+      width: 4rem;
+      border: none;
+      border-radius: 100%;
+      position: absolute;
+      top: 45%;
+      z-index: 1;
+      animation: popup 600ms ease-in;
+      &:active, &:focus {
+        outline: 0;
+        border: none;
+        outline-style: none;
+      }
+    
+      &--prev {
+        left: 3rem;
+      }
+      
+      &--next {
+        right: 3rem;
+      }
+    }
+  }
+  
+  &__card {
+    width: 28vw;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: white;
+    margin: 1vw;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    position: relative;
+    &--selected {
+      border: solid 3px $green;
+      padding-top: 22px;
+      padding-bottom: 7px;
+      box-shadow: 0px 8px 78px -24px $green;
+    }
+
+    &-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+    
+    &-name {
+      font-weight: normal;
+      margin-top: 15px;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+    
+    &-specialization {
+      margin-top: 0;
+      font-size: 14px;
+      font-weight: lighter;
+    }
+  }
+
+  &__selected-checkmark {
+    transform: translateY(5px);
+    &-container {
+      height: 35px;
+      width: 35px;
+      background-color: $green;
+      top: 0;
+      right: 0;
+      position: absolute;
+      border-bottom-left-radius: 12px;
+    }
+  }
+
+  &__confirm {
+  
+    &-container {
+      flex-basis: 25%;
+    }
+  
+    &-text {
+      margin-top: 0;
+    }
+  
+    &-input {
+  
+      &-container {
+        width: 450px;
+        background-color: white;
+        display: flex;
+        height: 60px;
+        margin: auto;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+    
+      &-form {
+        padding-left: 14px;
+        width: 100%;
+        border: none;
+      }
+      &-button {
+        margin: 5px;
+        color: white;
+        background-color: $disabled-grey;
+        transition: 300ms ease-in-out;
+        &--enabled {
+          background-color: $green;
+        }
+      }
+    }
+  }
 }
 
-.therapist-container {
-  flex-basis: 50%;
-  position: relative;
-  overflow: hidden;
-}
-
-.therapist-container-gradient-left::before {
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 12vw;
-  left: 0;
-  top: 0;
-  background-image: linear-gradient(to right, $background-grey, transparent);
-  z-index: 1;
-}
-
-.therapist-container-gradient-right::after {
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 12vw;
-  right: 0;
-  top: 0;
-  background-image: linear-gradient(to left, $background-grey, transparent);
-}
-
-.therapist-list {
-  min-width: 100vw;
-  white-space: nowrap;
-  padding-bottom: 58px;
-  transition: 300ms ease-in-out;
-  animation: scrollin 900ms ease-in-out;
-}
-
-.therapist-list-padded {
-  padding-left: 5vw;
-  padding-right: 5vw;
-}
-
-.therapist-button {
-  background-color: $green;
-  height: 4rem;
-  width: 4rem;
-  border: none;
-  border-radius: 100%;
-  position: absolute;
-  top: 45%;
-  z-index: 1;
-  animation: popup 600ms ease-in;
-}
-
-.therapist-button:active, .therapist-button:focus {
-  outline: 0;
-  border: none;
-  outline-style: none;
-}
-
-.therapist-button-prev {
-  left: 3rem;
-}
-
-.therapist-button-next {
-  right: 3rem;
-}
-
-.therapist {
-  width: 28vw;
-  display: inline-block;
-  border-radius: 10px;
-  background-color: white;
-  margin: 1vw;
-  padding-top: 25px;
-  padding-bottom: 10px;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.therapist-selected {
-  border: solid 3px $green;
-  padding-top: 22px;
-  padding-bottom: 7px;
-  box-shadow: 0px 8px 78px -24px $green;
-}
-
-.therapist-selected-square {
-  height: 35px;
-  width: 35px;
-  background-color: $green;
-  top: 0;
-  right: 0;
-  position: absolute;
-  border-bottom-left-radius: 12px;
-}
-
-.therapist-selected-checkmark {
-  transform: translateY(5px);
-}
-
-.therapist-avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 100%;
-  object-fit: cover;
-  object-position: top;
-}
-
-.therapist-name {
-  font-weight: normal;
-  margin-top: 15px;
-  font-size: 20px;
-  margin-bottom: 6px;
-}
-
-.therapist-specialization {
-  margin-top: 0;
-  font-size: 14px;
-  font-weight: lighter;
-}
-
-.therapist-client-container {
-  flex-basis: 25%;
-}
-
-.therapist-client-text {
-  margin-top: 0;
-}
-
-.therapist-client-input-container {
-  width: 450px;
-  background-color: white;
-  display: flex;
-  height: 60px;
-  margin: auto;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.therapist-client-input {
-  padding-left: 14px;
-  width: 100%;
-  border: none;
-}
-
-.therapist-client-button {
-  margin: 5px;
-  color: white;
-  background-color: $disabled-grey;
-  transition: 300ms ease-in-out;
-}
-
-.therapist-client-button-enabled {
-  background-color: $green;
-}
 
 .wait-container {
   height: 100vh;
