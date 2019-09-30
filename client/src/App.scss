@@ -225,55 +225,60 @@ button {
 }
 
 
-.wait-container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  animation: fadein 300ms ease-out;
-}
+.wait {
+  
+  &__container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    animation: fadein 300ms ease-out;
+  }
+  
+  &__checkmark {
+    height: 85px;
+    width: 85px;
+    border: solid $green;
+    border-radius: 100%;
+    display: inline-block;
+    position: relative;
+    animation: popup 600ms ease;
+    &::before {
+      content: '';
+      height: 19px;
+      width: 40px;
+      border-bottom: solid $green;
+      display: inline-block;
+      position: absolute;
+      border-left: solid $green;
+      transform: rotate(-45deg);
+      top: 32%;
+      left: 27%;
+    }
+  }
 
-.wait-checkmark {
-  height: 85px;
-  width: 85px;
-  border: solid $green;
-  border-radius: 100%;
-  display: inline-block;
-  position: relative;
-  animation: popup 600ms ease;
-}
+  &__text {
+    font-size: 22px;
+    animation: latefadein 1000ms ease-out;
+  }
 
-.wait-checkmark::before {
-  content: '';
-  height: 19px;
-  width: 40px;
-  border-bottom: solid $green;
-  display: inline-block;
-  position: absolute;
-  border-left: solid $green;
-  transform: rotate(-45deg);
-  top: 32%;
-  left: 27%;
-}
+  &__close {
 
-.wait-text {
-  font-size: 22px;
-  animation: latefadein 1000ms ease-out;
-}
+    &-container {
+      flex-basis: 25%;
+      animation: latefadein 1300ms ease-out;
+    }
 
-.wait-close-container {
-  flex-basis: 25%;
-  animation: latefadein 1300ms ease-out;
-}
+    &-button {
+      background-color: white;
+      color: $green;
+    }
 
-.wait-close {
-  background-color: white;
-  color: $green;
-}
-
-.wait-close-text {
-  display: block;
-  color: gray;
-  margin-top: 8px;
+    &-text {
+      display: block;
+      color: gray;
+      margin-top: 8px;
+    }
+  }
 }
