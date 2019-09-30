@@ -9,6 +9,12 @@
   to   { transform: scale(1) }
 }
 
+@keyframes scrollin {
+  from { transform: translateX(80vw) }
+  75%  { transform: translateX(-2vw) }
+  to   { transform: translateX(0) }
+}
+
 button {
   border: none;
   border-radius: 10px;
@@ -83,6 +89,7 @@ button {
   white-space: nowrap;
   padding-bottom: 58px;
   transition: 300ms ease-in-out;
+  animation: scrollin 900ms ease-in-out;
 }
 
 .therapist-list-padded {
