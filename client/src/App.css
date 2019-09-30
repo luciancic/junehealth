@@ -82,6 +82,7 @@ button {
   min-width: 100vw;
   white-space: nowrap;
   padding-bottom: 58px;
+  transition: 300ms ease-in-out;
 }
 
 .therapist-list-padded {
