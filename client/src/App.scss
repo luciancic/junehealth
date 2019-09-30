@@ -25,7 +25,7 @@ $background-grey: #f3f5f9;
   to   { transform: translateX(0) }
 }
 
-button {
+@mixin button {
   border: none;
   border-radius: 10px;
   height: 50px;
@@ -212,6 +212,7 @@ button {
         border: none;
       }
       &-button {
+        @include button;
         margin: 5px;
         color: white;
         background-color: $disabled-grey;
@@ -226,7 +227,7 @@ button {
 
 
 .wait {
-  
+
   &__container {
     height: 100vh;
     display: flex;
@@ -271,6 +272,7 @@ button {
     }
 
     &-button {
+      @include button;
       background-color: white;
       color: $green;
     }
