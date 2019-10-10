@@ -180,9 +180,9 @@ $background-grey: #f3f5f9;
   }
 
   &__selected-checkmark {
-    transform: translateY(5px);
+    transform: translateY(4px);
     &-container {
-      height: 35px;
+      height: 31px;
       width: 35px;
       background-color: $green;
       top: 0;
