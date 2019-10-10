@@ -116,12 +116,12 @@ $background-grey: #f3f5f9;
 
     &-button {
       background-color: $green;
-      height: 4rem;
-      width: 4rem;
+      height: 56px;
+      width: 56px;
       border: none;
       border-radius: 100%;
       position: absolute;
-      top: 45%;
+      top: 150px;
       z-index: 1;
       animation: popup 600ms ease-in;
       &:active, &:focus {
