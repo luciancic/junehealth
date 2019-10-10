@@ -19,7 +19,7 @@ function TherapistSelection({ data, handleClick }) {
     <div className='therapist__container'>
       <Title />
       <div className={`therapist__list-container ${containerGradientLeft} ${containerGradientRight}`}>
-        <p>Select your Therapist</p>
+        <p className='therapist__list-header'>Select your Therapist</p>
         { !isFirst && <ButtonPrev handleClick={() => setIndex(index - 1)} /> }
         <div className={`therapist__list ${listPadding}`} style={{ transform: `translateX(-${index * 30}vw)`}}>
           { data.map( (therapist, i) => (
@@ -34,7 +34,7 @@ function TherapistSelection({ data, handleClick }) {
         { !isLast && <ButtonNext handleClick={() => setIndex(index + 1)} /> }
       </div>
       <div className='therapist__confirm-container'>
-        <p className='therapist__confirm-text'>Please enter your first name</p>
+        <p className='therapist__confirm-header'>Please enter your first name</p>
         <div className='therapist__confirm-input-container'>  
           <input className='therapist__confirm-input-form' onChange={ev => setClientName(ev.target.value)}/>
           <button className={`therapist__confirm-input-button ${isConfirmEnabled ? 'therapist__confirm-input-button--enabled' : ''}`} onClick={isConfirmEnabled && handleClick}>CONFIRM</button>

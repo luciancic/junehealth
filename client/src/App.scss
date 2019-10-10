@@ -35,6 +35,10 @@ $background-grey: #f3f5f9;
   letter-spacing: 3px;
 }
 
+@mixin header {
+  font-size: 22px;
+}
+
 .app {
   background-color: $background-grey;
   text-align: center;
@@ -104,6 +108,10 @@ $background-grey: #f3f5f9;
     &--padded {
       padding-left: 5vw;
       padding-right: 5vw;
+    }
+
+    &-header {
+      @include header;
     }
 
     &-button {
@@ -190,7 +198,8 @@ $background-grey: #f3f5f9;
       flex-basis: 25%;
     }
   
-    &-text {
+    &-header {
+      @include header;
       margin-top: 0;
     }
   
