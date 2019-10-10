@@ -112,6 +112,7 @@ $background-grey: #f3f5f9;
 
     &-header {
       @include header;
+      margin-top: 0;
     }
 
     &-button {
@@ -121,7 +122,7 @@ $background-grey: #f3f5f9;
       border: none;
       border-radius: 100%;
       position: absolute;
-      top: 150px;
+      top: 116px;
       z-index: 1;
       animation: popup 600ms ease-in;
       &:active, &:focus {
@@ -131,11 +132,11 @@ $background-grey: #f3f5f9;
       }
     
       &--prev {
-        left: 3rem;
+        left: 36px;
       }
       
       &--next {
-        right: 3rem;
+        right: 36px;
       }
     }
   }
@@ -146,6 +147,7 @@ $background-grey: #f3f5f9;
     border-radius: 10px;
     background-color: white;
     margin: 1vw;
+    margin-top: 0;
     padding-top: 25px;
     padding-bottom: 10px;
     box-sizing: border-box;
@@ -154,7 +156,7 @@ $background-grey: #f3f5f9;
       border: solid 3px $green;
       padding-top: 22px;
       padding-bottom: 7px;
-      box-shadow: 0px 8px 78px -24px $green;
+      box-shadow: 0px 8px 56px -24px $green;
     }
 
     &-avatar {
