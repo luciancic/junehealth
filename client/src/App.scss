@@ -249,8 +249,8 @@ $background-grey: #f3f5f9;
   }
   
   &__checkmark {
-    height: 85px;
-    width: 85px;
+    height: 76px;
+    width: 76px;
     border: solid $green;
     border-radius: 100%;
     display: inline-block;
@@ -265,8 +265,8 @@ $background-grey: #f3f5f9;
       position: absolute;
       border-left: solid $green;
       transform: rotate(-45deg);
-      top: 32%;
-      left: 27%;
+      top: 28%;
+      left: 24%;
     }
   }
 
