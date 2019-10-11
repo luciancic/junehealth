@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Therapist from '../components/Therapist';
+import TherapistList from '../components/TherapistList';
 import ButtonNext from '../components/ButtonNext';
 import ButtonPrev from '../components/ButtonPrev';
 import Title from '../components/Title';
@@ -12,7 +12,7 @@ function TherapistSelection({ data, handleClick }) {
   const isLast = data.length - index <= 3;
   const containerGradientLeft = isFirst ? '' : 'therapist__list-container-gradient--left';
   const containerGradientRight = isLast ? '' : 'therapist__list-container-gradient--right';
-  const listPadding = data.length <= 3 ? '' : 'therapist__list--padded';
+  
   const isConfirmEnabled = (selected !== null) && (clientName !== '');
 
   return (
@@ -21,16 +21,7 @@ function TherapistSelection({ data, handleClick }) {
       <div className={`therapist__list-container ${containerGradientLeft} ${containerGradientRight}`}>
         <p className='therapist__list-header'>Select your Therapist</p>
         { !isFirst && <ButtonPrev handleClick={() => setIndex(index - 1)} /> }
-        <div className={`therapist__list ${listPadding}`} style={{ transform: `translateX(-${index * 30}vw)`}}>
-          { data.map( (therapist, i) => (
-            <Therapist 
-              key={therapist.name}
-              data={therapist} 
-              selected={selected === i} 
-              handleClick={() => setSelected(selected === i ? null : i)}
-            /> 
-          ))}
-        </div>
+        <TherapistList index={index} data={data} selectedState={[ selected, setSelected ]} />
         { !isLast && <ButtonNext handleClick={() => setIndex(index + 1)} /> }
       </div>
       <div className='therapist__confirm-container'>
