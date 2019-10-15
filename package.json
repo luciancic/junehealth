@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd client && yarn && yarn build && cd .. && node index.js",
+    "prestart": "node init/insertTherapists.js",
+    "start": "node index.js",
     "start-dev": "nodemon index.js"
   },
   "keywords": [],
