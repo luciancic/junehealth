@@ -13,7 +13,9 @@ function TherapistList({ data, indexState: [index, setIndex], selectedState: [se
   const calculateOffset = (px) => {
     const newOffset = (index * 30) - toVw(px);
     const maxOffset = (data.length - 3) * 30;
-    return newOffset < maxOffset ? newOffset : maxOffset;
+    return newOffset > maxOffset ? maxOffset
+      : newOffset < 0 ? 0 
+      : newOffset;
   }
 
   useEffect(() => setOffset(index * 30), [index]);
