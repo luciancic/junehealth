@@ -185,15 +185,20 @@ $background-grey: #f3f5f9;
 
   &__selected-checkmark {
     transform: translateY(4px);
+
     &-container {
       height: 31px;
       width: 35px;
-      background-color: $green;
+      background-color: white;
       top: 0;
       right: 0;
       position: absolute;
       border-bottom-left-radius: 12px;
-      animation: fadein 200ms ease;
+      transition: 200ms ease;
+      
+      &--active {
+        background-color: $green;
+      }
     }
   }
 
