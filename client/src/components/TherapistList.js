@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { animated, useSpring } from 'react-spring';
 import { useDrag } from 'react-use-gesture';
 import Therapist from '../components/Therapist';
 
 
-function TherapistList({ data, index, selectedState: [selected, setSelected] }) {
-  const [{ x }, set] = useSpring(() => ({ x: 0 }));
+function TherapistList({ data, indexState: [index, setIndex], selectedState: [selected, setSelected] }) {
   const [offset, setOffset] = useState(0);
   const listPadding = data.length <= 3 ? '' : 'therapist__list--padded';
   
+  const toVw = (px) => Math.round(px / window.innerWidth * 100);
+
   useEffect(() => setOffset(index * 30), [index]);
-  const bind =  useDrag(({ down, movement, ...rest }) => {
-    set({ xy: down ? movement : [0, 0] })
-  });
+  const bind =  useDrag(({ down, movement }) => {
+    const newOffset = (index * 30) - toVw(movement[0]);
+    if (down) 
+      setOffset(newOffset);
+    else 
+      setIndex(Math.round(newOffset / 30));
+  }, { dragDelay: true });
 
   return (
-    <animated.div {...bind()} className={`therapist__list ${listPadding}`} style={{ transform: `translateX(-${offset}vw)` }}>
+    <div {...bind()} className={`therapist__list ${listPadding}`} style={{ transform: `translateX(-${offset}vw)` }}>
       { data.map( (therapist, i) => (
         <Therapist 
           key={therapist.name}
@@ -24,7 +28,7 @@ function TherapistList({ data, index, selectedState: [selected, setSelected] }) 
           handleClick={() => setSelected(selected === i ? null : i)}
         /> 
       ))}
-    </animated.div>
+    </div>
   )
 }
 

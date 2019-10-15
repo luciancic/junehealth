@@ -21,7 +21,7 @@ function TherapistSelection({ data, handleClick }) {
       <div className={`therapist__list-container ${containerGradientLeft} ${containerGradientRight}`}>
         <p className='therapist__list-header'>Select your Therapist</p>
         { !isFirst && <ButtonPrev handleClick={() => setIndex(index - 1)} /> }
-        <TherapistList index={index} data={data} selectedState={[ selected, setSelected ]} />
+        <TherapistList indexState={[ index, setIndex ]} data={data} selectedState={[ selected, setSelected ]} />
         { !isLast && <ButtonNext handleClick={() => setIndex(index + 1)} /> }
       </div>
       <div className='therapist__confirm-container'>
