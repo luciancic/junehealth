@@ -10,10 +10,10 @@ function TherapistSelection({ data, handleClick }) {
   const [ clientName, setClientName ] = useState('');
   const isFirst = index === 0;
   const isLast = data.length - index <= 3;
+  const isConfirmEnabled = (selected !== null) && (clientName !== '');
   const containerGradientLeft = isFirst ? '' : 'therapist__list-container-gradient--left';
   const containerGradientRight = isLast ? '' : 'therapist__list-container-gradient--right';
-  
-  const isConfirmEnabled = (selected !== null) && (clientName !== '');
+  const confirmEnabledClass = isConfirmEnabled ? 'therapist__confirm-input-button--enabled' : '';
 
   return (
     <div className='therapist__container'>
@@ -28,7 +28,7 @@ function TherapistSelection({ data, handleClick }) {
         <p className='therapist__confirm-header'>Please enter your first name</p>
         <div className='therapist__confirm-input-container'>  
           <input className='therapist__confirm-input-form' onChange={ev => setClientName(ev.target.value)}/>
-          <button className={`therapist__confirm-input-button ${isConfirmEnabled ? 'therapist__confirm-input-button--enabled' : ''}`} onClick={isConfirmEnabled && handleClick}>CONFIRM</button>
+          <button className={`therapist__confirm-input-button ${confirmEnabledClass}`} onClick={isConfirmEnabled ? handleClick : undefined}>CONFIRM</button>
         </div>  
       </div>
     </div>
