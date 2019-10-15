@@ -19,7 +19,8 @@ function TherapistList({ data, indexState: [index, setIndex], selectedState: [se
   }
 
   useEffect(() => setOffset(index * 30), [index]);
-  const bind =  useDrag(({ down, movement: [x] }) => {
+  const bind =  useDrag(({ down, movement: [x], event }) => {
+    event.stopPropagation();
     const newOffset = calculateOffset(x);
     if (down) {
       setOffset(newOffset);
@@ -30,7 +31,7 @@ function TherapistList({ data, indexState: [index, setIndex], selectedState: [se
       setOffset(index * 30); // Manual offset reset in case index does not change
       toggleTransition(true);
     }
-  }, { dragDelay: true });
+  }, { dragDelay: true, event: { capture: true } });
 
   return (
     <div {...bind()} className={`therapist__list ${listPadding}`} style={{ transform: `translateX(-${offset}vw)`, transition }}>
