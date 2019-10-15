@@ -5,6 +5,8 @@ import Therapist from '../components/Therapist';
 
 function TherapistList({ data, indexState: [index, setIndex], selectedState: [selected, setSelected] }) {
   const [offset, setOffset] = useState(0);
+  const [transitionEnabled, toggleTransition] = useState(true);
+  const transition = transitionEnabled ? '300ms ease-in-out' : 'none';
   const listPadding = data.length <= 3 ? '' : 'therapist__list--padded';
   
   const toVw = (px) => Math.round(px / window.innerWidth * 100);
@@ -17,14 +19,18 @@ function TherapistList({ data, indexState: [index, setIndex], selectedState: [se
   useEffect(() => setOffset(index * 30), [index]);
   const bind =  useDrag(({ down, movement: [x] }) => {
     const newOffset = calculateOffset(x);
-    if (down) 
+    if (down) {
       setOffset(newOffset);
-    else 
+      toggleTransition(false);
+    }
+    else {
       setIndex(Math.round(newOffset / 30));
+      toggleTransition(true);
+    }
   }, { dragDelay: true });
 
   return (
-    <div {...bind()} className={`therapist__list ${listPadding}`} style={{ transform: `translateX(-${offset}vw)` }}>
+    <div {...bind()} className={`therapist__list ${listPadding}`} style={{ transform: `translateX(-${offset}vw)`, transition }}>
       { data.map( (therapist, i) => (
         <Therapist 
           key={therapist.name}
