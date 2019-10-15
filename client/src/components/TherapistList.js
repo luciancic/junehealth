@@ -27,6 +27,7 @@ function TherapistList({ data, indexState: [index, setIndex], selectedState: [se
     }
     else {
       setIndex(Math.round(newOffset / 30));
+      setOffset(index * 30); // Manual offset reset in case index does not change
       toggleTransition(true);
     }
   }, { dragDelay: true });
