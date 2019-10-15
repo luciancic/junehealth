@@ -8,10 +8,15 @@ function TherapistList({ data, indexState: [index, setIndex], selectedState: [se
   const listPadding = data.length <= 3 ? '' : 'therapist__list--padded';
   
   const toVw = (px) => Math.round(px / window.innerWidth * 100);
+  const calculateOffset = (px) => {
+    const newOffset = (index * 30) - toVw(px);
+    const maxOffset = (data.length - 3) * 30;
+    return newOffset < maxOffset ? newOffset : maxOffset;
+  }
 
   useEffect(() => setOffset(index * 30), [index]);
-  const bind =  useDrag(({ down, movement }) => {
-    const newOffset = (index * 30) - toVw(movement[0]);
+  const bind =  useDrag(({ down, movement: [x] }) => {
+    const newOffset = calculateOffset(x);
     if (down) 
       setOffset(newOffset);
     else 
