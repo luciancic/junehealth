@@ -39,6 +39,14 @@ $background-grey: #f3f5f9;
   font-size: 22px;
 }
 
+@mixin select-disabled {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+}
+
 .app {
   background-color: $background-grey;
   text-align: center;
@@ -103,7 +111,6 @@ $background-grey: #f3f5f9;
     min-width: 100vw;
     white-space: nowrap;
     padding-bottom: 58px;
-    transition: 300ms ease-in-out;
     animation: scrollin 900ms ease-in-out;
     &--padded {
       padding-left: 5vw;
@@ -154,6 +161,7 @@ $background-grey: #f3f5f9;
     box-sizing: border-box;
     position: relative;
     transition: 200ms border-color ease;
+    @include select-disabled;
     &--selected {
       border-color: $green;
       padding-top: 22px;
