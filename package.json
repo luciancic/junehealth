@@ -6,8 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
+    "build": "node init/insertTherapists.js && cd client && yarn && yarn build",
     "start-dev": "nodemon index.js"
   },
+  "engines": {
+    "node": "10.15.3"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
